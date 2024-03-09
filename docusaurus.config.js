@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'redoop 说明文档',
-  tagline: 'redoop enterprise',
-  url: 'https://enterprise.redoop.com',
+  title: 'Redoop Community',
+  tagline: 'making the big data platform easy and faster!',
+  url: 'http://wwww.redoop.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -17,14 +17,14 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'redoop', // Usually your GitHub org/user name.
-  projectName: 'enterprise.redoop.com', // Usually your repo name.
+  projectName: 'www.redoop.com', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh',
+    locales: ['en', 'zh'],
   },
 
   presets: [
@@ -33,19 +33,16 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/redoop/community.redoop.com/tree/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/redoop/community.redoop.com/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -58,61 +55,60 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '欢迎来到redoop',
+        title: 'Redoop Community',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Redoop Community',
           src: 'img/logo.svg',
         },
         items: [
-           /*
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentation',
           },
-
-
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://www.redoop.org/docs/install-guide/download',
+            label: 'download',
             position: 'right',
           },
-          */
+          {
+            to: '/blog', 
+            label: 'Blog', 
+            position: 'left'
+          },
+          // {
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          // },
+          {
+            href: 'https://github.com/redoop',
+            label: 'GitHub',
+            position: 'right',
+          }
         ],
+      },
+      announcementBar: {
+        id: 'redoop_community_is_coming',
+        content: 'The Redoop Community is online!',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: false,
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Quick Start',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
+            title: 'News',
             items: [
               {
                 label: 'Blog',
@@ -120,12 +116,24 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/redoop',
               },
             ],
           },
+          {
+            title: 'more',
+            items: [
+              {
+                label: 'Apache Ambari',
+                href: 'https://ambari.apache.org',
+              },{
+                label: 'Apache BigTop',
+                href: 'https://bigtop.apache.org',
+              }
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Redoop Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
